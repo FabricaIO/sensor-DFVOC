@@ -25,11 +25,11 @@
 	"frameworks": "arduino",
 	"platforms": "*",
 	"fabricaio" : {
-		"name": "VOC and eCO2 Sensor",
+		"name": "VOC Sensor",
 		"type": 0,
 		"category": "Environment Sensor",
-		"libname": "DFMICSGas",
-		"includes": ["DFMICSGas"],
+		"libname": "DFVOC",
+		"includes": ["DFVOC"],
 		"description": "Sensor that combines the ENS160 VOC/eCO2 sensor with the BME temperature and pressure sensor",
 		"constructor":
 		[
