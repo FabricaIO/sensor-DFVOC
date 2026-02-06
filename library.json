@@ -1,0 +1,102 @@
+{
+	"name": "sensor-DFVOC",
+	"version": "0.5.0",
+	"description": "DF Robot sensor that combines the ENS160 VOC/eCO2 sensor with the BME temperature and pressure sensor",
+	"keywords": "Fabrica-IO, sensor, air, VOC, CO2, temperature, humidity, pressure, ENS160, BME280",
+	"repository":
+	{
+	  "type": "git",
+	  "url": "https://github.com/FabricaIO/sensor-DFVOC.git"
+	},
+	"authors":
+	[
+	  {
+		"name": "Sam Groveman",
+		"email": "SamGroveman@outlook.com",
+		"url": "https://github.com/FabricaIO"
+	  }
+	],
+	"dependencies": {
+		"DFRobot_ENS160": "https://github.com/DFRobot/DFRobot_ENS160",
+		"DFRobot_BME280": "https://github.com/DFRobot/DFRobot_BME280"
+	},
+	"license": "GPLv3",
+	"homepage": "https://github.com/FabricaIO",
+	"frameworks": "arduino",
+	"platforms": "*",
+	"fabricaio" : {
+		"name": "VOC and eCO2 Sensor",
+		"type": 0,
+		"category": "Environment Sensor",
+		"libname": "DFMICSGas",
+		"includes": ["DFMICSGas"],
+		"description": "Sensor that combines the ENS160 VOC/eCO2 sensor with the BME temperature and pressure sensor",
+		"constructor":
+		[
+			[
+				{
+					"name": "I2C_bus",
+					"type": "TwoWire*",
+					"description": "The I2C bus the sensor is connected to",
+					"default": "&Wire"
+				},
+				{
+					"name": "ens160_address",
+					"type": "uint8_t",
+					"description": "The I2C address of the ens160 sensor",
+					"default": "0x53"
+				},
+				{
+					"name": "bme280_address",
+					"type": "uint8_t",
+					"description": "The I2C address of the bme280 sensor",
+					"default": "0x76"
+				},
+				{
+					"name": "ConfigFile",
+					"type": "String",
+					"description": "The config file name",
+					"default": "DFVOC.json"
+				}
+			],
+			[
+				{
+					"name": "sda",
+					"type": "int",
+					"description": "The SDA pin on the I2C bus",
+					"default": "21"
+				},
+				{
+					"name": "scl",
+					"type": "int",
+					"description": "The SCL pin on the I2C bus",
+					"default": "22"
+				},
+				{
+					"name": "I2C_bus",
+					"type": "TwoWire*",
+					"description": "The I2C bus the sensor is connected to",
+					"default": "&Wire"
+				},
+				{
+					"name": "ens160_address",
+					"type": "uint8_t",
+					"description": "The I2C address of the ens160 sensor",
+					"default": "0x53"
+				},
+				{
+					"name": "bme280_address",
+					"type": "uint8_t",
+					"description": "The I2C address of the bme280 sensor",
+					"default": "0x76"
+				},
+				{
+					"name": "ConfigFile",
+					"type": "String",
+					"description": "The config file name",
+					"default": "DFVOC.json"
+				}
+			]
+		]
+	}
+  }
