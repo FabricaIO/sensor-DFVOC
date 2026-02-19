@@ -100,7 +100,7 @@ bool DFVOC::takeMeasurement() {
 	values[3] = temperature;
 	values[4] = humidity;
 	uint32_t pressure = bme280_sensor.getPressure();
-	values[5] = pressure;
+	values[5] = ((double)pressure) / 100;
 	values[6] = bme280_sensor.calAltitude(current_config.pressureSeaLevel, pressure);
 	return true;
 }
