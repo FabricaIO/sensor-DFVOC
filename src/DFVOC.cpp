@@ -82,7 +82,7 @@ bool DFVOC::takeMeasurement() {
 		if (status == 1) {
 			Logger.println("Sensor still warming up. Wait up to 3 minutes from power on and try again.");
 		} else {
-			Logger.println("Initial sensor burn. Leave sensor on for one hour to complete first-use burn in.");
+			Logger.println("Initial sensor burn-in. Leave sensor on for one hour to complete first-use burn in.");
 		}
 		return false;
 	}
