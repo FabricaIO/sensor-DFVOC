@@ -52,22 +52,28 @@ bool DFVOC::begin() {
 		} else {
 			result = i2c_bus->begin();
 		}
+	} else {
+		Logger.println("Could not load settings");
 	}
 
 	if (result) {
 		// Initialize BME280
 		bme280_sensor.reset();
 		if (bme280_sensor.begin() != DFRobot_BME280_IIC::eStatusOK) {
+			Logger.println("Could not start BME280");
 			return false;
 		}
 		
 		// Initialize ENS160
 		if (ens160_sensor.begin() != NO_ERR) {
+			Logger.println("Could not start ENS160");
 			return false;
 		}
 
 		// Set ENS160 to standard mode
 		ens160_sensor.setPWRMode(ENS160_STANDARD_MODE);
+	} else {
+		Logger.println("Could not start I2C bus");
 	}
 
 	return result;
